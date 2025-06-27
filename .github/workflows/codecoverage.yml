@@ -44,6 +44,7 @@ jobs:
         # If your test runner supports HTML reports (e.g., pytest-cov, lcov, etc.)
         # Example for Python pytest-cov:
         pip install pytest-cov
+        export PYTHONPATH=$PYTHONPATH:$(pwd)
         pytest --cov=./ --cov-report=html:mounted-output/htmlcov
         # For other languages, adjust accordingly (e.g., `lcov` for JS/C++)        
     - name: Comment on PR with coverage result
